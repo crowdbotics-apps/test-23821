@@ -1,0 +1,45 @@
+
+{% load staticfiles %}
+
+<nav class="navbar navbar-expand-lg navbar-dark rad-navbar">
+    <a class="navbar-brand" href="#"><img src="{% static 'img/logo.jpg' %}"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Auctions</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">List Your RAD Stuff</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">RFS Email</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">This is How You Do It</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav navbar-right ml-auto">
+            <li class="nav-item">
+                <div class="header-icons">
+                    <button class="icon"><img src="{% static 'img/Search.svg' %}"></button>
+                    <button class="icon"><img src="{% static 'img/notification.svg' %}"></button>
+                    <button class="icon"><img src="{% static 'img/profile.svg' %}"></button>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-rad-primary" href="#">Sign up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sign in</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="tagline-nav">
+    <img src="{% static 'img/btybr.svg' %}/">
+</div>

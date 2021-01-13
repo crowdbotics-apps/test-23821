@@ -1,0 +1,53 @@
+{% load staticfiles %}
+
+
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.smartWizard.min.js' %}"></script>
+<script src="{% static 'js/dropify.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+<script>
+    $(document).ready(function () {
+        var activeForm = '{{activeForm}}';
+        $(".category-form").each(function () {
+            $(this).hide();
+            if ($(this).attr('data-target') === activeForm.toString()) {
+                $(this).show();
+                $('#smartwizard').smartWizard("goToStep", 0);
+                $(activeForm.toString()).attr('checked', 'true');
+            }
+        });
+
+        $('.category-option').change(function () {
+
+            if (this.checked) {
+                let target = $(this).attr('id');
+                $(".category-form").each(function () {
+                    $(this).hide();
+                    if ($(this).attr('data-target') === '#' + target) {
+                        $(this).show();
+                    }
+                });
+            }
+        });
+
+        $(".rad-plan-card").click(function () {
+
+            $(".rad-plan-card").each(function () {
+                 $(this).removeClass('selected')
+            });
+
+            $(".select-plan").each(function () {
+                 $(this).removeAttr('checked')
+            });
+
+            $(this).addClass('selected')
+            $('.plans-start').removeClass('disabled')
+            $('.selected').find('.select-plan').attr('checked', 'true')
+        });
+
+
+    });
+
+</script>

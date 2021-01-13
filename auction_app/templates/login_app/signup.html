@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block content %}
+
+<center>
+    <br>
+    <div class="card text-center col-sm-4">
+        <div class="card-header">
+            Sign Up
+        </div>
+        <div class="card-body">
+            {% if message %}
+            <div class="alert alert-primary" role="alert">
+                {{message}}
+            </div><br>
+            {% endif %}
+            <form method="POST" id="signup-form">{% csrf_token %}
+                <input type="text" class="form-control" name="name" placeholder="Name" required><br>
+                <input type="email" class="form-control" name="email" placeholder="Email Address" required><br>
+                <input type="password" class="form-control" name="pass" placeholder="Password" minlength="6"><br>
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit" form="signup-form">Sign Up</button>
+        </div>
+    </div>
+</center>
+
+{% endblock %}

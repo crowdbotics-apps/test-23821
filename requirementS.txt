@@ -1,0 +1,11 @@
+drf_yasg
+django_allauth
+django-bootstrap4
+django-environ
+django_extensions
+djangorestframework
+django_rest_auth
+django_storages
+fcm_django
+mailchimp3
+whitenoise

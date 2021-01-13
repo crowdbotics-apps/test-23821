@@ -1,0 +1,40 @@
+{% extends "listing/base.html" %}
+
+{% load staticfiles %}
+{% load input_tags %}
+
+
+{% block content %}
+
+
+    <div class="remove-this my-5 py-3"></div>
+    <div class="container form-container mt-5 pt-5">
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center">LIST YOUR RAD STUFF</h2>
+                </div>
+            </div>
+            <div class="row rad-plans">
+                {% for plan in plans %}
+                    <div class="col-md-3 px-2">
+                        <div class="rad-plan-card">
+                            <div class="title">{{ plan.name }}</div>
+                            <div class="price">${{ plan.seller_price | floatformat  }}</div>
+                            <div class="description">{{ plan.description }}</div>
+                            <input type="radio" class="select-plan" name="plan" value="{{ plan.slug }}"
+                                   style="display:none"/>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-rad-primary plans-start disabled">GET STARTED</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="remove-this my-5 py-3"></div>
+{% endblock content %}
+

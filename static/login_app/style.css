@@ -1,0 +1,139 @@
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5% 14%;
+    position: absolute;
+  
+    box-shadow: 0 15px 0px  #D2D2D2;
+
+ 
+}
+
+.left-panel{
+    background-color: #EC1C24;
+    width:500px;
+    height: auto;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 10%;
+   
+}
+
+
+.right-panel{
+    background-color:#231F20;
+    width:500px;
+    color: #FFFFFF;
+    height: auto;
+
+}
+
+
+.panel-container{
+    padding: 10%;
+}
+
+
+input{
+    width: 100%;
+}
+
+input[type="email"]{
+    padding-left: 2%;
+    
+    
+}
+input[type="password"]{
+    padding-left: 2%;
+}
+input[type="submit"]{
+    background-color:#35BBB0 ;
+    color: #FFFFFF;
+    font-size: small;
+    width: 300px;
+    height: 35px;
+    text-align: center;
+   
+}
+
+button[type="button"]{
+    background-color:#35BBB0 ;
+    color: #FFFFFF;
+    font-size: small;
+    width: 300px;
+    height: 35px;
+    text-align: center;
+   
+}
+a{
+    color: #35BBB0;
+}
+a:hover{
+    color: #35BBB0;
+    text-decoration: none;
+}
+
+.logo-heading{
+    font-weight: 900 ;
+}
+.logo-text{
+    color: black;
+    font-weight: 900 ;
+}
+
+
+#regForm {
+    width: 70%;
+    min-width: 300px;
+  }
+  
+  /* multi step form */
+.tab {
+    display: none;
+  }
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  .step.active {
+    opacity: 1;
+  }
+  .step.finish {
+    background-color: #F40085;
+  }
+
+  /* Profile page styles */
+
+  .card-header{
+      background-color: #EC1C24 ;
+      color:#FFFFFF ;
+      text-align: center;
+  }
+  .card-body{
+      background-color: #231F20;
+      padding: 1% 15%;
+  }
+
+  .card-expanse{
+      background-color: #D2D2D2;
+      height: 10px;
+  }
+  .profile-heading{
+      color: #909090;
+  }
+
+  .profile-info{
+      color: #FFFFFF;
+  }
+
+  hr{
+      background-color: #565656;
+  }

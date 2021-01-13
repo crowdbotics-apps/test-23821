@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Sign In
+{% endblock %}
+
+{% block content %}
+
+<center>
+    <br>
+    <div class="card text-center col-sm-4">
+        <div class="card-header">
+            Sign In
+        </div>
+        <div class="card-body">
+            {% if message %}
+            <div class="alert alert-primary" role="alert">
+                {{message}}
+            </div><br>
+            {% endif %}
+            <form method="POST" id="login-form">{% csrf_token %}
+                <input type="email" class="form-control" name="email" placeholder="Email Address" required><br>
+                <input type="password" class="form-control" name="pass" placeholder="Password" minlength="6"><br>
+            </form>
+            <h6>
+                <a href="{% url 'reset1' %}">Reset Password</a>
+            </h6>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit" form="login-form">Sign In</button>
+        </div>
+    </div>
+</center>
+
+{% endblock %}

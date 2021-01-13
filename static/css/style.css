@@ -1,0 +1,803 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 48px;
+}
+
+.btn-rad-primary {
+  color: #231F20 !important;
+  background-color: #35BBB0;
+  border-radius: 0;
+  border-color: #35BBB0;
+}
+
+.rad-navbar {
+  background-color: #231F20;
+  padding: 15px 27px 15px 50px;
+}
+
+.rad-navbar .navbar-brand {
+  margin-right: 23px;
+}
+
+.rad-navbar .navbar-brand img {
+  height: 71px;
+  width: auto;
+}
+
+@media (max-width: 1455px) {
+  .rad-navbar .navbar-brand img {
+    height: 55px;
+  }
+}
+
+.rad-navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+  padding: 20px 23px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 36px;
+  position: relative;
+  color: #ffffff;
+}
+
+@media (max-width: 1455px) {
+  .rad-navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+}
+
+.rad-navbar .navbar-collapse .navbar-nav .nav-item .nav-link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 8px);
+  border: 8px solid transparent;
+  border-bottom-color: #EC1C24;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.rad-navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover {
+  color: #EC1C24;
+}
+
+.rad-navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover:before {
+  opacity: 1;
+  bottom: 10px;
+}
+
+@media (max-width: 1455px) {
+  .rad-navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover:before {
+    bottom: 4px;
+  }
+}
+
+.rad-navbar .navbar-collapse .navbar-nav .nav-item.active .nav-link {
+  color: #ffffff;
+}
+
+.rad-navbar .navbar-collapse .navbar-nav .nav-item.active .nav-link:before {
+  opacity: 1;
+  border-bottom-color: #ffffff;
+  bottom: 10px;
+}
+
+@media (max-width: 1455px) {
+  .rad-navbar .navbar-collapse .navbar-nav .nav-item.active .nav-link:before {
+    bottom: 4px;
+  }
+}
+
+.rad-navbar .navbar-collapse .navbar-right .nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rad-navbar .navbar-collapse .navbar-right .nav-item .nav-link {
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.rad-navbar .navbar-collapse .navbar-right .nav-item .nav-link.btn-rad-primary {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 19px 45px;
+  line-height: 18px;
+  margin-left: 35px;
+}
+
+@media (max-width: 1455px) {
+  .rad-navbar .navbar-collapse .navbar-right .nav-item .nav-link.btn-rad-primary {
+    padding: 12px 24px;
+    margin-left: 35px;
+  }
+}
+
+.rad-navbar .navbar-collapse .navbar-right .nav-item .nav-link.btn-rad-primary:before {
+  display: none;
+}
+
+.rad-navbar .navbar-collapse .navbar-right .nav-item .header-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rad-navbar .navbar-collapse .navbar-right .nav-item .header-icons .icon {
+  background-color: transparent;
+  border: none;
+  margin: auto 11px;
+}
+
+@media (max-width: 1455px) {
+  .rad-navbar .navbar-collapse .navbar-right .nav-item .header-icons .icon {
+    margin: auto 7px;
+  }
+}
+
+.rad-navbar .navbar-collapse .navbar-right .nav-item .header-icons .icon img {
+  width: auto;
+  height: 45px;
+}
+
+@media (max-width: 1455px) {
+  .rad-navbar .navbar-collapse .navbar-right .nav-item .header-icons .icon img {
+    height: 34px;
+  }
+}
+
+.rad-navbar .navbar-collapse .navbar-right .nav-item .header-icons .icon:focus {
+  outline: none;
+}
+
+.tagline-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #D2D2D2;
+  height: 65px;
+}
+
+@media (max-width: 1455px) {
+  .tagline-nav {
+    height: 40px;
+  }
+}
+
+.tagline-nav img {
+  height: 28px;
+  width: auto;
+}
+
+@media (max-width: 1455px) {
+  .tagline-nav img {
+    height: 18px;
+  }
+}
+
+@media (min-width: 1439px) {
+  .form-container {
+    max-width: 1380px;
+  }
+}
+
+.job-listing .select-form-category {
+  margin-top: 13px;
+}
+
+.job-listing .select-form-category p {
+  color: #EC1C24;
+}
+
+.job-listing .select-form-category .categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.job-listing .select-form-category .categories .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.job-listing .select-form-category .categories .custom-control {
+  margin-right: 14px;
+}
+
+.job-listing .select-form-category .categories .custom-control .custom-control-label {
+  color: #231F20;
+}
+
+.job-listing .select-form-category .categories .custom-control .custom-control-label:before {
+  width: 18px;
+  height: 18px;
+  border-color: #231F20;
+}
+
+.job-listing .select-form-category .categories .custom-radio .custom-control-input:checked ~ .custom-control-label:before {
+  background-color: transparent;
+}
+
+.job-listing .select-form-category .categories .custom-radio .custom-control-input:checked ~ .custom-control-label:after {
+  background-image: none;
+  background-color: transparent;
+  background: #231F20;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  left: -21px;
+  top: 7px;
+}
+
+.job-listing .select-form-category .category-form {
+  margin-top: 24px;
+}
+
+.job-listing .select-form-category .category-form.cars-form .step-cars-form {
+  border: none;
+}
+
+.job-listing .select-form-category .category-form.cars-form .step-cars-form .nav {
+  height: 76px;
+  background-color: #EC1C24;
+  border-bottom: none;
+}
+
+.job-listing .select-form-category .category-form.cars-form .step-cars-form .nav .nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 24px 70px;
+  font-size: 24px;
+  font-weight: bold;
+  min-width: 250px;
+  text-align: left;
+  background-color: #D2D2D2;
+  border-color: #D2D2D2;
+}
+
+.job-listing .select-form-category .category-form.cars-form .step-cars-form .nav .nav-link:before {
+  border-left: 50px solid rgba(0, 0, 0, 0.15);
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  left: calc(100% + 2px);
+}
+
+.job-listing .select-form-category .category-form.cars-form .step-cars-form .nav .nav-link:after {
+  border-left: 50px solid #D2D2D2;
+}
+
+.job-listing .select-form-category .category-form.cars-form .step-cars-form .nav .nav-link.active {
+  background-color: #EC1C24;
+}
+
+.job-listing .select-form-category .category-form.cars-form .step-cars-form .nav .nav-link.active:after {
+  border-left: 50px solid #EC1C24;
+}
+
+.job-listing .select-form-category .category-form.cars-form .step-cars-form .nav .nav-link.done {
+  color: #949494;
+}
+
+.job-listing .select-form-category .category-form .category-form-content {
+  background-color: #231F20;
+  color: #ffffff;
+  padding: 35px 20px;
+  border-bottom: 16px solid #D2D2D2;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image {
+  width: 305px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone {
+  width: 275px;
+  height: 269px;
+  background-color: #eee;
+  position: relative;
+  border: 2px solid #eee;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper .dropify-clear {
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background: url("../img/cancel.svg") no-repeat;
+  background-size: 10px 10px;
+  background-position: center;
+  background-color: #ffffff;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper .dropify-clear:focus {
+  outline: none;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper.has-preview:hover .dropify-clear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper .dropify-message {
+  width: 100%;
+  height: 100%;
+  background: url("../img/drop-file.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper .dropify-message p {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom: 18px;
+  width: 100%;
+  color: #909090;
+  line-height: 20px;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper .dropify-message p span {
+  color: #EC1C24;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper .dropify-preview {
+  padding: 0;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper .dropify-preview .dropify-infos {
+  display: none;
+  background-color: transparent;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper .dropify-preview .dropify-render {
+  width: 100%;
+  height: 100%;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image .rad-dropzone .dropify-wrapper .dropify-preview .dropify-render img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image p {
+  font-size: 14px;
+  line-height: 18px;
+  color: #909090;
+  margin-top: 17px;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .upload-image p a {
+  color: #35BBB0;
+  text-decoration: underline;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form {
+  width: calc(100% - 305px);
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form h2 {
+  line-height: 28px;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form hr {
+  border-top: 1px solid #565656;
+  margin: 20px 0;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group label {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group .form-control {
+  height: 36px;
+  padding: 8px 15px;
+  border-radius: 0;
+  border: none;
+  color: #565656;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group textarea.form-control {
+  height: 97px;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox label {
+  width: 100% !important;
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox .custom-control {
+  width: auto;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox .custom-control .custom-control-input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox .custom-control .custom-control-label:before, .job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox .custom-control .custom-control-label:after {
+  border: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 0;
+  top: 0;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox .custom-control-input:focus ~ .custom-control-label:before {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox .custom-checkbox .custom-control-input:checked ~ .custom-control-label:before {
+  background-color: #35BBB0;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox .custom-checkbox .custom-control-input:checked ~ .custom-control-label:after {
+  background-blend-mode: exclusion;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label:before {
+  background-color: #EEEEEE;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .form-group.form-checkbox .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label:after {
+  background-image: none;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .toolbar {
+  margin-top: 20px;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .toolbar .btn {
+  border-radius: 0;
+  height: 48px;
+  min-width: 178px;
+  width: auto;
+  padding: 8px 30px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #35BBB0;
+  color: #231F20;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+}
+
+.job-listing .select-form-category .category-form .category-form-content .cat-form .toolbar .btn.disabled {
+  opacity: 0;
+}
+
+.job-listing .select-form-category .category-form .form-heading {
+  height: 77px;
+  width: 100%;
+  background-color: #EC1C24;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+  padding: 22px 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=main.css.map */
+
+.common-image{
+  padding-top: 35px;
+  background-color: #231F20;
+  border-bottom: 16px solid #D2D2D2;
+}
+
+.common-image .upload-image {
+  width: 305px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.common-image .upload-image .rad-dropzone {
+  width: 275px;
+  height: 269px;
+  background-color: #eee;
+  position: relative;
+  border: 2px solid #eee;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper .dropify-clear {
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background: url("../img/cancel.svg") no-repeat;
+  background-size: 10px 10px;
+  background-position: center;
+  background-color: #ffffff;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper .dropify-clear:focus {
+  outline: none;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper.has-preview:hover .dropify-clear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper .dropify-message {
+  width: 100%;
+  height: 100%;
+  background: url("../img/drop-file.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper .dropify-message p {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom: 18px;
+  width: 100%;
+  color: #909090;
+  line-height: 20px;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper .dropify-message p span {
+  color: #EC1C24;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper .dropify-preview {
+  padding: 0;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper .dropify-preview .dropify-infos {
+  display: none;
+  background-color: transparent;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper .dropify-preview .dropify-render {
+  width: 100%;
+  height: 100%;
+}
+
+.common-image .upload-image .rad-dropzone .dropify-wrapper .dropify-preview .dropify-render img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.common-image .upload-image p {
+  font-size: 14px;
+  line-height: 18px;
+  color: #909090;
+  margin-top: 17px;
+}
+
+.common-image .upload-image p a {
+  color: #35BBB0;
+  text-decoration: underline;
+}
+.field-error{
+  color: #EC1C24 !important;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.required-field{
+  color: #EC1C24 !important;
+  padding-left: 5px;
+  font-weight: bold;
+}
+.category-option:checked ~ .custom-control-label:after{
+  background-color: #EB008B !important;
+}
+
+/* select plan start */
+
+.rad-plans {
+  margin-top: 90px;
+}
+
+.rad-plans .rad-plan-card {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rad-plans .rad-plan-card .title {
+  width: 100%;
+  min-height: 80px;
+  height: auto;
+  background-color: #EC1C24;
+  color: #ffffff;
+  font-weight: bolder;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24px;
+  line-height: 48px;
+  padding: 10px 22px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.rad-plans .rad-plan-card .price {
+  width: 100%;
+  height: 176px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 72px;
+  font-weight: bolder;
+  background-color: #231F20;
+  color: #FAEE4B;
+  padding: 22px;
+  text-align: center;
+}
+
+.rad-plans .rad-plan-card .description {
+  padding: 15px 22px;
+  min-height: 161px;
+  height: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  color: #909090;
+  line-height: 27px;
+  text-align: center;
+  border: 1px solid #D2D2D2;
+  border-bottom-width: 16px;
+}
+
+.rad-plans .rad-plan-card.selected .description {
+  border-color: #EC1C24;
+}
+
+.rad-plans .plans-start {
+  padding: 10px 30px;
+  min-width: 254px;
+  min-height: 54px;
+  color: #ffffff !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: 50px auto;
+}
+.rad-plans .plans-start.disabled{
+    background-color: #D2D2D2;
+    border-color: #D2D2D2;
+   pointer-events: none;
+}
+/* select plan end */

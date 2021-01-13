@@ -1,0 +1,565 @@
+{% extends "listing/base.html" %}
+
+{% load staticfiles %}
+{% load input_tags %}
+
+
+{% block content %}
+
+
+    <div class="remove-this my-5 py-3"></div>
+
+
+    <div class="container form-container">
+        {% if success %}
+            <div class="alert alert-success" role="alert">
+                Listing saved successfully. Waiting for Admin Approval.
+            </div>
+        {% endif %}
+        <div class="row job-listing">
+            <div class="col-12">
+                <h2>POST A LISTING</h2>
+                <div class="select-form-category">
+                    <p>*Select Category:</p>
+                    <div class="categories">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="cars" name="form-category"
+                                   class="custom-control-input category-option">
+                            <label class="custom-control-label" for="cars">Cars</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="engine" name="form-category"
+                                   class="custom-control-input category-option">
+                            <label class="custom-control-label" for="engine">Engine</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="seats" name="form-category"
+                                   class="custom-control-input category-option">
+                            <label class="custom-control-label" for="seats">Seats</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="wheels" name="form-category"
+                                   class="custom-control-input category-option">
+                            <label class="custom-control-label" for="wheels">Wheels</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="accessories" name="form-category"
+                                   class="custom-control-input category-option">
+                            <label class="custom-control-label" for="accessories">Accessories</label>
+                        </div>
+                    </div>
+
+
+                    <!-- Cars Form -->
+                    <div class="category-form cars-form" data-target="#cars">
+                        <div id="smartwizard" class="step-cars-form">
+                            <ul class="nav">
+                                <li>
+                                    <a class="nav-link" href="#step-1">
+                                        1. Make & Model
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#step-2">
+                                        2. Basic Facts
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#step-3">
+                                        3. Details
+                                    </a>
+                                </li>
+                            </ul>
+                            <form method="post" action="" enctype="multipart/form-data" novalidate>
+                                {% csrf_token %}
+                                <input type="hidden" name="category_id" value="{{ form.cars.category_id }}">
+                                <input type="hidden" name="plan" value="{{ plan.id }}">
+
+                                <div class="tab-content d-flex">
+                                    <div class="common-image">
+                                        <div class="upload-image">
+                                            <div class="rad-dropzone">
+                                                <input name="image" type="file" multiple class="dropify"
+                                                       accept="image/*" required/>
+                                            </div>
+                                            {% for error in error %}
+                                                <p class="field-error">{{ error }}  </p>
+                                            {% endfor %}
+                                            <p>Please upload photos or videos of your vehicle using the box above —
+                                                pick ones that offer a good sense of the vehicle. The more, and the
+                                                higher the quality, the better <a href="#">Click here to review our
+                                                    photo guide.</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div id="step-1" class="tab-pane category-form-content" role="tabpanel">
+                                        <div class="row px-0">
+                                            <div class="cat-form w-100">
+                                                <h2>Add Your Vehicle</h2>
+                                                <hr>
+                                                <div class="row">
+
+                                                    <div class="col-md-4 col-6">
+                                                        <div class="form-group">
+                                                            <label for="name">{{ form.cars.basic.name.label }} <span
+                                                                    class="required-field">*</span></label>
+                                                            {{ form.cars.basic.name }}
+                                                            {% for error in form.cars.basic.name.errors %}
+                                                                <p class="field-error">{{ error|escape }}  </p>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-6">
+                                                        <div class="form-group">
+                                                            <label for="name">{{ form.cars.basic.email.label }} <span
+                                                                    class="required-field">*</span></label>
+                                                            {{ form.cars.basic.email }}
+                                                            {% for error in form.cars.basic.email.errors %}
+                                                                <p class="field-error">{{ error|escape }}  </p>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-6">
+                                                        <div class="form-group">
+                                                            <label for="name">{{ form.cars.basic.manufacture_year.label }}</label>
+                                                            {{ form.cars.basic.manufacture_year }}
+                                                            {% for error in form.cars.basic.manufacture_year.errors %}
+                                                                <p class="field-error">{{ error|escape }}  </p>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-6">
+                                                        <div class="form-group">
+                                                            <label for="name">{{ form.cars.basic.make.label }}</label>
+                                                            {{ form.cars.basic.make }}
+                                                            {% for error in form.cars.basic.make.errors %}
+                                                                <p class="field-error">{{ error|escape }}  </p>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4 col-6">
+                                                        <div class="form-group">
+                                                            <label for="name">{{ form.cars.basic.model.label }}</label>
+                                                            {{ form.cars.basic.model }}
+                                                            {% for error in form.cars.basic.model.errors %}
+                                                                <p class="field-error">{{ error|escape }}  </p>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-6">
+                                                        <div class="form-group">
+                                                            <label for="name">{{ form.cars.basic.country.label }}</label>
+                                                            {{ form.cars.basic.country }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-6">
+                                                        <div class="form-group">
+                                                            <label for="name">{{ form.cars.basic.postal_code.label }}</label>
+                                                            {{ form.cars.basic.postal_code }}
+                                                        </div>
+                                                    </div>
+
+                                                    {% for item in form.cars.faq %}
+                                                        {% if item.step == 'M' %}
+                                                            <div class="col-md-4 col-6">
+                                                                {% create_input item as element %} {{ element|safe }}
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="toolbar toolbar-bottom col-12" role="toolbar"
+                                                         style="text-align: right;">
+                                                        <!-- <button class="btn sw-btn-prev disabled" type="button">Previous</button> -->
+                                                        <button class="btn sw-btn-next" type="button">Next</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="step-2" class="tab-pane category-form-content" role="tabpanel">
+                                        <div class="row px-0">
+                                            <div class="cat-form w-100">
+                                                <h2>Please provide some basic info on your vehicle:</h2>
+                                                <hr>
+
+                                                <div class="row">
+
+                                                    {% for item in form.cars.faq %}
+                                                        {% if item.step == 'B' %}
+                                                            <div class="col-md-4 col-6">
+                                                                {% create_input item as element %} {{ element|safe }}
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="toolbar toolbar-bottom col-12" role="toolbar"
+                                                         style="text-align: right;">
+                                                        <!-- <button class="btn sw-btn-prev disabled" type="button">Previous</button> -->
+                                                        <button class="btn sw-btn-next" type="button">Next</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="step-3" class="tab-pane category-form-content" role="tabpanel">
+                                        <div class="row px-0">
+                                            <div class="cat-form w-100">
+                                                <h2>Description and details</h2>
+                                                <hr>
+                                                <div class="row">
+                                                    {% for item in form.cars.faq %}
+                                                        {% if item.step == 'D' %}
+                                                            <div class="col-md-4 col-6">
+                                                                {% create_input item as element %} {{ element|safe }}
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="toolbar toolbar-bottom col-12" role="toolbar"
+                                                         style="text-align: right;">
+                                                        <!-- <button class="btn sw-btn-prev disabled" type="button">Previous</button> -->
+                                                        <button class="btn" type="submit">Finish</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <!-- Cars Form end -->
+                    <!-- Engine Form -->
+                    <div class="category-form engine-form" data-target="#engine">
+                        <div class="form-heading">
+                            Sell Engine
+                        </div>
+                        <div class="category-form-content">
+                            <form method="post" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name="category_id" value="{{ form.engine.category_id }}">
+                                <input type="hidden" name="plan" value="{{ plan.id }}">
+                                <div class="row px-0">
+                                    <div class="upload-image">
+                                        <div class="rad-dropzone">
+                                            <input name="image" type="file" multiple class="dropify" accept="image/*"
+                                                   required/>
+                                        </div>
+                                        {% for error in error %}
+                                            <p class="field-error">{{ error }}  </p>
+                                        {% endfor %}
+
+                                        <p>Please upload photos or videos of your vehicle using the box above — pick
+                                            ones
+                                            that
+                                            offer a good sense of the vehicle. The more, and the higher the quality, the
+                                            better
+                                            <a href="#">Click here to review our photo guide.</a></p>
+                                    </div>
+                                    <div class="cat-form">
+                                        <h2>Add Your Engine</h2>
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col-md-4 col-6">
+                                                <div class="form-group">
+                                                    <label for="name">{{ form.engine.basic.name.label }} <span
+                                                            class="required-field">*</span></label>
+                                                    {{ form.engine.basic.name }}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-6">
+                                                <div class="form-group">
+                                                    <label for="email">{{ form.engine.basic.email.label }} <span
+                                                            class="required-field">*</span></label>
+                                                    {{ form.engine.basic.email }}
+                                                </div>
+                                            </div>
+                                            {% for item in form.engine.faq %}
+                                                <div class="col-md-4 col-6">
+                                                    {% create_input item as element %} {{ element|safe }}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="toolbar toolbar-bottom col-12" role="toolbar"
+                                                 style="text-align: right;">
+                                                <button class="btn" type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <!-- Engine Form end -->
+
+                    <!-- Seats Form -->
+
+                    <div class="category-form seats-form" data-target="#seats">
+                        <div class="form-heading">
+                            Sell Seats
+                        </div>
+
+                        <div class="category-form-content">
+                            <form method="post" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name="category_id" value="{{ form.seats.category_id }}">
+                                <input type="hidden" name="plan" value="{{ plan.id }}">
+
+                                <div class="row px-0">
+                                    <div class="upload-image">
+                                        <div class="rad-dropzone">
+                                            <input name="image" type="file" multiple class="dropify" accept="image/*"
+                                                   required/>
+
+                                        </div>
+                                        {% for error in error %}
+                                            <p class="field-error">{{ error }}  </p>
+                                        {% endfor %}
+
+                                        <p>Please upload photos or videos of your vehicle using the box above — pick
+                                            ones that
+                                            offer a good sense of the vehicle. The more, and the higher the quality, the
+                                            better
+                                            <a href="#">Click here to review our photo guide.</a></p>
+                                    </div>
+                                    <div class="cat-form">
+                                        <h2>Add Your Seats</h2>
+                                        <hr>
+
+                                        <div class="row">
+
+                                            <div class="col-md-4 col-6">
+                                                <div class="form-group">
+                                                    <label for="name">{{ form.seats.basic.name.label }} <span
+                                                            class="required-field">*</span></label>
+                                                    {{ form.seats.basic.name }}
+                                                </div>
+                                                {% for error in form.seats.basic.name.errors %}
+                                                    <p class="field-error">{{ error|escape }}  </p>
+                                                {% endfor %}
+                                            </div>
+
+                                            <div class="col-md-4 col-6">
+                                                <div class="form-group">
+                                                    <label for="name">{{ form.seats.basic.email.label }} <span
+                                                            class="required-field">*</span></label>
+                                                    {{ form.seats.basic.email }}
+                                                </div>
+                                                {% for error in form.seats.basic.email.errors %}
+                                                    <p class="field-error">{{ error|escape }}  </p>
+                                                {% endfor %}
+                                            </div>
+
+                                            <div class="col-md-4 col-6">
+                                                <div class="form-group">
+                                                    <label for="name">{{ form.seats.basic.model.label }}</label>
+                                                    {{ form.seats.basic.model }}
+                                                </div>
+                                            </div>
+
+                                            {% for item in form.seats.faq %}
+                                                <div class="col-md-4 col-6">
+                                                    {% create_input item as element %} {{ element|safe }}
+                                                </div>
+                                            {% endfor %}
+
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="toolbar toolbar-bottom col-12" role="toolbar"
+                                                 style="text-align: right;">
+                                                <button class="btn" type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <!-- Seats Form end -->
+
+                    <!-- wheels Form -->
+
+                    <div class="category-form wheels-form" data-target="#wheels">
+                        <div class="form-heading">
+                            Sell Wheels
+                        </div>
+
+                        <div class="category-form-content">
+                            <form method="post" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name="category_id" value="{{ form.wheels.category_id }}">
+                                <input type="hidden" name="plan" value="{{ plan.id }}">
+                                <div class="row px-0">
+                                    <div class="upload-image">
+                                        <div class="rad-dropzone">
+                                            <input name="image" type="file" multiple class="dropify" accept="image/*"
+                                                   required/>
+                                        </div>
+                                        {% for error in error %}
+                                            <p class="field-error">{{ error }}  </p>
+                                        {% endfor %}
+
+                                        <p>Please upload photos or videos of your vehicle using the box above — pick
+                                            ones that
+                                            offer a good sense of the vehicle. The more, and the higher the quality, the
+                                            better
+                                            <a href="#">Click here to review our photo guide.</a></p>
+                                    </div>
+                                    <div class="cat-form">
+                                        <h2>Add Your Wheels</h2>
+                                        <hr>
+                                        <div class="row">
+
+                                            <div class="col-md-4 col-6">
+
+                                                <div class="form-group">
+                                                    <label for="name">{{ form.wheels.basic.name.label }} <span
+                                                            class="required-field">*</span></label>
+                                                    {{ form.wheels.basic.name }}
+                                                </div>
+                                                {% for error in form.wheels.basic.name.errors %}
+                                                    <p class="field-error">{{ error|escape }}  </p>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="col-md-4 col-6">
+
+                                                <div class="form-group">
+                                                    <label for="name">{{ form.wheels.basic.email.label }} <span
+                                                            class="required-field">*</span></label>
+                                                    {{ form.wheels.basic.email }}
+                                                </div>
+                                                {% for error in form.wheels.basic.email.errors %}
+                                                    <p class="field-error">{{ error|escape }}  </p>
+                                                {% endfor %}
+                                            </div>
+                                            {% for item in form.wheels.faq %}
+                                                <div class="col-md-4 col-6">
+
+                                                    {% create_input item as element %} {{ element|safe }}
+                                                </div>
+
+                                            {% endfor %}
+
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="toolbar toolbar-bottom col-12" role="toolbar"
+                                                 style="text-align: right;">
+                                                <button class="btn" type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- wheels Form end -->
+
+                    <!-- Accessories Form -->
+
+                    <div class="category-form accessories-form" data-target="#accessories">
+                        <div class="form-heading">
+                            Sell Accessories...
+                        </div>
+
+                        <div class="category-form-content">
+                            <form method="post" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name="category_id" value="{{ form.accessories.category_id }}">
+                                <input type="hidden" name="plan" value="{{ plan.id }}">
+
+                                <div class="row px-0">
+                                    <div class="upload-image">
+                                        <div class="rad-dropzone">
+                                            <input name="image" type="file" multiple class="dropify" accept="image/*"
+                                                   required/>
+                                        </div>
+                                        {% for error in error %}
+                                            <p class="field-error">{{ error }}  </p>
+                                        {% endfor %}
+
+                                        <p>Please upload photos or videos of your vehicle using the box above — pick
+                                            ones that
+                                            offer a good sense of the vehicle. The more, and the higher the quality, the
+                                            better
+                                            <a href="#">Click here to review our photo guide.</a></p>
+                                    </div>
+                                    <div class="cat-form">
+                                        <h2>Add Accessories</h2>
+                                        <hr>
+
+                                        <div class="row">
+
+                                            <div class="col-md-4 col-6">
+                                                <div class="form-group">
+                                                    <label for="name">{{ form.accessories.basic.name.label }} <span
+                                                            class="required-field">*</span></label>
+                                                    {{ form.accessories.basic.name }}
+                                                </div>
+                                                {% for error in form.accessories.basic.name.errors %}
+                                                    <p class="field-error">{{ error|escape }}  </p>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="col-md-4 col-6">
+                                                <div class="form-group">
+                                                    <label for="name">{{ form.accessories.basic.email.label }} <span
+                                                            class="required-field">*</span></label>
+                                                    {{ form.accessories.basic.email }}
+                                                </div>
+                                                {% for error in form.accessories.basic.email.errors %}
+                                                    <p class="field-error">{{ error|escape }}  </p>
+                                                {% endfor %}
+                                            </div>
+
+                                            {% for item in form.accessories.faq %}
+                                                <div class="col-md-4 col-6">
+                                                    {% create_input item as element %} {{ element|safe }}
+                                                </div>
+                                            {% endfor %}
+
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="toolbar toolbar-bottom col-12" role="toolbar"
+                                                 style="text-align: right;">
+                                                <button class="btn" type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Accessories Form end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="remove-this my-5 py-3"></div>
+{% endblock content %}
+

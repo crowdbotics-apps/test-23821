@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Newsletter - Signup
+{% endblock %}
+
+{% block head %}
+<style>
+    .left {
+        background-color: #231F20;
+        height: 200px;
+        width: 100%;
+  position: absolute;
+  left: 0;
+  top: 20.5%;
+  -webkit-clip-path: polygon(0 0, 51% 0, 69% 100%, 0 100%);
+  clip-path: polygon(0 0, 51% 0, 69% 100%, 0 100%);
+}
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h5>
+                <strong style="font-weight: 700;">
+                    NEWSLETTER SIGN UP
+                </strong>
+            </h5>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card" style="border-radius: 0px;box-shadow: 0 15px 0px  #D2D2D2;">
+                <div class="card-header" style="border-radius: 0;background-color: #EC1C24;color: white;">
+                    <h6>
+                        SUBSCRIBE TO OUR NEWSLETTER
+                    </h6>
+                </div>
+                <div class="card-body" style="border-radius: 0;height: 200px;background-image: url('/static/images/test.png');background-size: auto 200px;
+                background-repeat: no-repeat;background-position: right;">
+                    <div class="left">
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+                                <p style="color: #D2D2D2;">
+                                    Enter your email address to receive the latest auctions and market info.
+                                </p>
+                                <small style="color: white;">Email:</small><br>
+                                <form method="POST" id="signup-form">{% csrf_token %}
+                                    <input type="email" style="width: 100%;" placeholder="John@website.com" name="email" required>
+                                </form>
+                            </div>
+                            <div class="col-sm-2">
+                                <br><br><br>
+                                <button style="width: 100%;border: none;border-radius: 0;background-color: #35BBB0;height: 30px;
+                                position: relative;top: 16px;" form="signup-form" type="submit">
+                                    SUBMIT
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<center>
+    
+    
+</center>
+
+{% endblock %}
