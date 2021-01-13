@@ -7,5 +7,5 @@ djangorestframework
 django_rest_auth
 django_storages
 fcm_django
-mailchimp3
 whitenoise
+mailchimp3
