@@ -110,6 +110,7 @@ def signup(request):
         return redirect('/accounts/profile')
     return render(request,template,context)
 
+
 def login(request):
     template = 'login_app/login2.html'
     context = {}
