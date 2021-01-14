@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 import requests,json
 from proud_forest_23287.settings import MAILCHIMP_API_KEY,MAILCHIMP_USERNAME
+from mailchimp3 import MailChimp
 
 from django.contrib.auth.decorators import login_required
 
