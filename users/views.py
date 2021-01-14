@@ -170,12 +170,12 @@ def reset_password_second(request,key):
             objp.save()
         except:
             return Http404
-        return redirect('/accounts/signin')
+        return redirect('/accounts/login')
     return render(request,template,context)
 
 def profile_page(request):
     if not request.user.is_authenticated:
-        return redirect('/accounts/signin')
+        return redirect('/accounts/login')
     template = 'login_app/profile.html'
     context = {}
     obj = Profile.objects.get(user=request.user)

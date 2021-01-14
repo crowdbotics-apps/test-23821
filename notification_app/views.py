@@ -1,6 +1,8 @@
 from django.shortcuts import render,HttpResponse
 from .models import notification_model,notification_pref
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def notification_page(request):
     template = 'notification_app/notification.html'
     context = {}

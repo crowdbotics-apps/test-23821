@@ -3,7 +3,7 @@ from auction.models import Auction
 
 def auctions(request):
     if not request.user.is_authenticated:
-        return redirect('/signup')
+        return redirect('accounts/signup')
     template = 'auction_app/auctions.html'
     context = {}
     objs = Auction.objects.filter(seller=request.user)
